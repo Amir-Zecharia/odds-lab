@@ -1,0 +1,114 @@
+{
+  "pairs": {
+    "PS": {
+      "closing": "PSC",
+      "n_matches": 5150,
+      "seasons": "2012-13 to 2025-26",
+      "regression": {
+        "n": 5150,
+        "logit_drift_coef": 2.43065143103052,
+        "logit_drift_z": 1.504178418118852,
+        "logit_drift_p": 0.13253543316638997,
+        "ols_drift_coef": 0.5075923695349425,
+        "ols_drift_t": 1.3598421333143227,
+        "ols_drift_p": 0.17387988610367688
+      },
+      "consensus_vs_closing": {
+        "threshold": 0.04806602644310072,
+        "n_big_moves": 515,
+        "consensus_fav_miss_rate": 0.5009708737864078,
+        "closing_fav_miss_rate": 0.487378640776699,
+        "n_favorites_disagree": 35,
+        "disagreements_won_by_closing": 0.6
+      }
+    },
+    "B365": {
+      "closing": "B365C",
+      "n_matches": 2660,
+      "seasons": "2019-20 to 2025-26",
+      "regression": {
+        "n": 2660,
+        "logit_drift_coef": 0.5035210493747767,
+        "logit_drift_z": 0.2412056879255319,
+        "logit_drift_p": 0.8093957027058286,
+        "ols_drift_coef": -0.16267520205831495,
+        "ols_drift_t": -0.3266418488465714,
+        "ols_drift_p": 0.7439387873939478
+      },
+      "consensus_vs_closing": {
+        "threshold": 0.05128962823384148,
+        "n_big_moves": 266,
+        "consensus_fav_miss_rate": 0.46616541353383456,
+        "closing_fav_miss_rate": 0.44360902255639095,
+        "n_favorites_disagree": 16,
+        "disagreements_won_by_closing": 0.6875
+      }
+    },
+    "WH": {
+      "closing": "WHC",
+      "n_matches": 2189,
+      "seasons": "2019-20 to 2024-25",
+      "regression": {
+        "n": 2189,
+        "logit_drift_coef": 0.24410692853309213,
+        "logit_drift_z": 0.09846810577603961,
+        "logit_drift_p": 0.9215605967571604,
+        "ols_drift_coef": 0.36529567116852324,
+        "ols_drift_t": 0.5722939934637574,
+        "ols_drift_p": 0.5671228183245314
+      },
+      "consensus_vs_closing": {
+        "threshold": 0.04705653474203506,
+        "n_big_moves": 219,
+        "consensus_fav_miss_rate": 0.5068493150684932,
+        "closing_fav_miss_rate": 0.5068493150684932,
+        "n_favorites_disagree": 14,
+        "disagreements_won_by_closing": 0.5
+      }
+    },
+    "Avg": {
+      "closing": "AvgC",
+      "n_matches": 2660,
+      "seasons": "2019-20 to 2025-26",
+      "regression": {
+        "n": 2660,
+        "logit_drift_coef": 2.009347610151837,
+        "logit_drift_z": 0.8935472311679125,
+        "logit_drift_p": 0.37156419069019087,
+        "ols_drift_coef": 0.3851487794398591,
+        "ols_drift_t": 0.6976381499453906,
+        "ols_drift_p": 0.4854035169845715
+      },
+      "consensus_vs_closing": {
+        "threshold": 0.04645629368232552,
+        "n_big_moves": 266,
+        "consensus_fav_miss_rate": 0.5,
+        "closing_fav_miss_rate": 0.48872180451127817,
+        "n_favorites_disagree": 17,
+        "disagreements_won_by_closing": 0.5882352941176471
+      }
+    },
+    "Max": {
+      "closing": "MaxC",
+      "n_matches": 2660,
+      "seasons": "2019-20 to 2025-26",
+      "regression": {
+        "n": 2660,
+        "logit_drift_coef": 2.6622343218934725,
+        "logit_drift_z": 1.1207703387655246,
+        "logit_drift_p": 0.26238563284285743,
+        "ols_drift_coef": 0.6459211760365657,
+        "ols_drift_t": 1.1125108399489076,
+        "ols_drift_p": 0.2659185720318855
+      },
+      "consensus_vs_closing": {
+        "threshold": 0.046416737940484745,
+        "n_big_moves": 266,
+        "consensus_fav_miss_rate": 0.49624060150375937,
+        "closing_fav_miss_rate": 0.4774436090225564,
+        "n_favorites_disagree": 17,
+        "disagreements_won_by_closing": 0.6470588235294118
+      }
+    }
+  }
+}

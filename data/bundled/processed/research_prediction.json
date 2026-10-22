@@ -1,0 +1,91 @@
+{
+  "universe": {
+    "n_matches": 5150,
+    "n_test_matches": 3250,
+    "seasons": "2012-13 to 2025-26",
+    "test_seasons": "2017-18 to 2025-26",
+    "min_train_seasons": 5
+  },
+  "baselines": {
+    "market consensus": 0.9521026993661276,
+    "Pinnacle closing": 0.9482404274209357
+  },
+  "models": {
+    "recalibration": {
+      "log_loss": 0.9489745447065613,
+      "vs_consensus": {
+        "diff": -0.003128154659566231,
+        "lo": -0.00604511642963757,
+        "hi": -0.00036841352312912926,
+        "p_better": 0.987,
+        "significantly_better": true,
+        "significantly_worse": false
+      },
+      "vs_pinnacle_closing": {
+        "diff": 0.0007341172856254706,
+        "lo": -0.00048743120674739,
+        "hi": 0.002020608473929345,
+        "p_better": 0.1255,
+        "significantly_better": false,
+        "significantly_worse": false
+      }
+    },
+    "drift": {
+      "log_loss": 0.9506910158312353,
+      "vs_consensus": {
+        "diff": -0.001411683534892318,
+        "lo": -0.004584220538420471,
+        "hi": 0.0018009821038792381,
+        "p_better": 0.803,
+        "significantly_better": false,
+        "significantly_worse": false
+      },
+      "vs_pinnacle_closing": {
+        "diff": 0.0024505884102993835,
+        "lo": 0.0006668050646167555,
+        "hi": 0.004326023038780209,
+        "p_better": 0.0025,
+        "significantly_better": false,
+        "significantly_worse": true
+      }
+    },
+    "cross-market": {
+      "log_loss": 0.9491516584072058,
+      "vs_consensus": {
+        "diff": -0.002951040958921702,
+        "lo": -0.006049797529449523,
+        "hi": 7.056815221310846e-06,
+        "p_better": 0.974,
+        "significantly_better": false,
+        "significantly_worse": false
+      },
+      "vs_pinnacle_closing": {
+        "diff": 0.0009112309862699996,
+        "lo": -0.0006727108600952963,
+        "hi": 0.002589795215094929,
+        "p_better": 0.1335,
+        "significantly_better": false,
+        "significantly_worse": false
+      }
+    },
+    "ensemble": {
+      "log_loss": 0.9507378878350772,
+      "vs_consensus": {
+        "diff": -0.0013648115310503817,
+        "lo": -0.0049770973560975965,
+        "hi": 0.0020478623908103326,
+        "p_better": 0.785,
+        "significantly_better": false,
+        "significantly_worse": false
+      },
+      "vs_pinnacle_closing": {
+        "diff": 0.0024974604141413197,
+        "lo": 0.00047060776604425483,
+        "hi": 0.004554429834774164,
+        "p_better": 0.008,
+        "significantly_better": false,
+        "significantly_worse": true
+      }
+    }
+  }
+}

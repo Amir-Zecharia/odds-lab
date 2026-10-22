@@ -1,0 +1,1294 @@
+{
+  "leagues": {
+    "E0": {
+      "efficiency": {
+        "intercept": 0.02301996925240462,
+        "intercept_se": 0.01505400167684559,
+        "slope": 1.0362720057505803,
+        "slope_se": 0.023752949798193593,
+        "z_intercept_vs_0": 1.5291594717842636,
+        "z_slope_vs_1": 1.5270526843507577,
+        "n": 29640
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": -0.003512355132957579,
+          "intercept_se": 0.020874266043226494,
+          "slope": 0.9944797876069882,
+          "slope_se": 0.03280007361163332,
+          "z_intercept_vs_0": -0.16826244935674303,
+          "z_slope_vs_1": -0.16829878061779535,
+          "n": 15024
+        },
+        {
+          "period": "late",
+          "intercept": 0.050352604446618404,
+          "intercept_se": 0.02170397932525609,
+          "slope": 1.0795461106157085,
+          "slope_se": 0.03438913024193985,
+          "z_intercept_vs_0": 2.31997108419768,
+          "z_slope_vs_1": 2.313117838574954,
+          "n": 14616
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": -0.31361252008404605,
+        "se_dispersion": 0.5841580203871541,
+        "t_dispersion": -0.5368624740891129,
+        "p_dispersion": 0.5913626137231628,
+        "coef_favprob": -0.7947898164557856,
+        "r_squared": 0.09610635691109004,
+        "n": 9880
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 3.781029129604576,
+          "df": 2,
+          "p_value": 0.15099409259766094,
+          "llf_baseline": -4885.437685249086,
+          "llf_full": -4883.547170684284
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 6.600747890270213,
+          "df": 2,
+          "p_value": 0.03686937769867976,
+          "llf_baseline": -4885.437685249086,
+          "llf_full": -4882.137311303951
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 1.168037057730544,
+          "df": 2,
+          "p_value": 0.5576529135483606,
+          "llf_baseline": -4885.437685249086,
+          "llf_full": -4884.853666720221
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 3.177017975194758,
+          "df": 2,
+          "p_value": 0.20422989413856935,
+          "llf_baseline": -4885.437685249086,
+          "llf_full": -4883.8491762614885
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 0.1936126545369916,
+          "df": 2,
+          "p_value": 0.907731792005889,
+          "llf_baseline": -4885.437685249086,
+          "llf_full": -4885.340878921817
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 13.742866482954923,
+          "df": 10,
+          "p_value": 0.18504663159279927,
+          "llf_baseline": -4885.437685249086,
+          "llf_full": -4878.566252007608
+        }
+      ],
+      "model_rows": 5115,
+      "oos_comparison": [
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 0.9523003123163012,
+          "n_matches": 3225,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 0.9529784292843375,
+          "n_matches": 3225,
+          "diff_vs_market": 0.0006781169680362718,
+          "ci_lo": -0.0014881085869128225,
+          "ci_hi": 0.0029374525972675845
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 0.9536470656255347,
+          "n_matches": 3225,
+          "diff_vs_market": 0.0013467533092334542,
+          "ci_lo": -0.0004510940633563,
+          "ci_hi": 0.0030910993452067386
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 0.954157793154591,
+          "n_matches": 3225,
+          "diff_vs_market": 0.001857480838290023,
+          "ci_lo": -0.00020283870181048838,
+          "ci_hi": 0.003979856313742813
+        },
+        {
+          "model": "+ Elo",
+          "log_loss": 0.9541718486750898,
+          "n_matches": 3225,
+          "diff_vs_market": 0.0018715363587885295,
+          "ci_lo": -7.336118351859194e-05,
+          "ci_hi": 0.0038896036235207326
+        },
+        {
+          "model": "+ form",
+          "log_loss": 0.9542547312676459,
+          "n_matches": 3225,
+          "diff_vs_market": 0.0019544189513446835,
+          "ci_lo": -0.0004430786592840055,
+          "ci_hi": 0.004364373059537158
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 0.9545670949388324,
+          "n_matches": 3225,
+          "diff_vs_market": 0.002266782622531207,
+          "ci_lo": 0.00033443489678627837,
+          "ci_hi": 0.0040728779868457205
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 0.955443875335924,
+          "n_matches": 3225,
+          "diff_vs_market": 0.0031435630196229953,
+          "ci_lo": 0.00021148617802700507,
+          "ci_hi": 0.006220611612726207
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 1.0025242715901768,
+          "n_matches": 3225,
+          "diff_vs_market": 0.05022395927387556,
+          "ci_lo": 0.0392454582628011,
+          "ci_hi": 0.06066760390388342
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 0.9585946997130177,
+            "n_matches": 7980
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 0.9813236719147289,
+            "n_matches": 7980
+          }
+        ],
+        "diff_vs_market": 0.022728972201711252,
+        "ci_lo": 0.018088220360658377,
+        "ci_hi": 0.027481091069950815
+      }
+    },
+    "E1": {
+      "efficiency": {
+        "intercept": -0.004270446887110515,
+        "intercept_se": 0.017209265829044987,
+        "slope": 0.9935451165093323,
+        "slope_se": 0.026006682916637595,
+        "z_intercept_vs_0": -0.24814811564494846,
+        "z_slope_vs_1": -0.24820095324568395,
+        "n": 43047
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": -0.0050365966162941945,
+          "intercept_se": 0.024865853202338913,
+          "slope": 0.992412280540693,
+          "slope_se": 0.03745175695463591,
+          "z_intercept_vs_0": -0.20255072590151244,
+          "z_slope_vs_1": -0.20259982645134078,
+          "n": 22989
+        },
+        {
+          "period": "late",
+          "intercept": -0.0035314587339745273,
+          "intercept_se": 0.023826890900457264,
+          "slope": 0.9946414790514702,
+          "slope_se": 0.036147494210771076,
+          "z_intercept_vs_0": -0.14821315750880257,
+          "z_slope_vs_1": -0.14824045388277934,
+          "n": 20058
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": 0.42338047708023274,
+        "se_dispersion": 0.38339518783230214,
+        "t_dispersion": 1.1042926216001967,
+        "p_dispersion": 0.26946622245532637,
+        "coef_favprob": -0.5506122869556782,
+        "r_squared": 0.038828576785925994,
+        "n": 14349
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 3.165279227167048,
+          "df": 2,
+          "p_value": 0.20543212047875403,
+          "llf_baseline": -7668.214895396723,
+          "llf_full": -7666.632255783139
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 4.9500770122722315,
+          "df": 2,
+          "p_value": 0.08415974952814598,
+          "llf_baseline": -7668.214895396723,
+          "llf_full": -7665.739856890586
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 0.6213930228459503,
+          "df": 2,
+          "p_value": 0.7329362799077219,
+          "llf_baseline": -7668.214895396723,
+          "llf_full": -7667.9041988853
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 0.3407269644922053,
+          "df": 2,
+          "p_value": 0.8433582151393582,
+          "llf_baseline": -7668.214895396723,
+          "llf_full": -7668.0445319144765
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 2.1907202750426222,
+          "df": 2,
+          "p_value": 0.3344191483759086,
+          "llf_baseline": -7668.214895396723,
+          "llf_full": -7667.119535259201
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 11.72558513324475,
+          "df": 10,
+          "p_value": 0.3038418319644487,
+          "llf_baseline": -7668.214895396723,
+          "llf_full": -7662.3521028301
+        }
+      ],
+      "model_rows": 7386,
+      "oos_comparison": [
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 1.0369762052428202,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 1.0381847668176902,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0012085615748698977,
+          "ci_lo": 0.0002447271534441461,
+          "ci_hi": 0.0022469053008134987
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 1.0383050777111829,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0013288724683624036,
+          "ci_lo": 0.0004035328460048721,
+          "ci_hi": 0.002288607581614013
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 1.0385146440719086,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0015384388290884457,
+          "ci_lo": 0.0002433989456341199,
+          "ci_hi": 0.002878423858114144
+        },
+        {
+          "model": "+ Elo",
+          "log_loss": 1.0386877465135826,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0017115412707623982,
+          "ci_lo": 0.0006239683199662489,
+          "ci_hi": 0.0028548756292397907
+        },
+        {
+          "model": "+ form",
+          "log_loss": 1.038732745859868,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0017565406170475862,
+          "ci_lo": 0.0007519884595247845,
+          "ci_hi": 0.002819862850698053
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 1.0388511532180842,
+          "n_matches": 4657,
+          "diff_vs_market": 0.0018749479752639855,
+          "ci_lo": 0.0005064011999645399,
+          "ci_hi": 0.0033004793822115695
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 1.0396805020956177,
+          "n_matches": 4657,
+          "diff_vs_market": 0.002704296852797456,
+          "ci_lo": 0.0008017365155855487,
+          "ci_hi": 0.004510095579019312
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 1.0739204125159612,
+          "n_matches": 4657,
+          "diff_vs_market": 0.03694420727314081,
+          "ci_lo": 0.029120384052763904,
+          "ci_hi": 0.04506996283925997
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 1.0414541072034127,
+            "n_matches": 11592
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 1.0702951521850257,
+            "n_matches": 11592
+          }
+        ],
+        "diff_vs_market": 0.028841044981613058,
+        "ci_lo": 0.024743259440260734,
+        "ci_hi": 0.03291673556856989
+      }
+    },
+    "SP1": {
+      "efficiency": {
+        "intercept": 0.03518748922767272,
+        "intercept_se": 0.015881785698039563,
+        "slope": 1.0550010641989294,
+        "slope_se": 0.02486805108838819,
+        "z_intercept_vs_0": 2.2155877114005036,
+        "z_slope_vs_1": 2.211715908232607,
+        "n": 29634
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": 0.010911256308956993,
+          "intercept_se": 0.023490643186019254,
+          "slope": 1.0170292145400541,
+          "slope_se": 0.036682564627576915,
+          "z_intercept_vs_0": 0.4644937229922662,
+          "z_slope_vs_1": 0.46423184182853033,
+          "n": 12954
+        },
+        {
+          "period": "late",
+          "intercept": 0.05429282717099676,
+          "intercept_se": 0.021525551684614713,
+          "slope": 1.0849630139988364,
+          "slope_se": 0.033773746597352945,
+          "z_intercept_vs_0": 2.5222502060099257,
+          "z_slope_vs_1": 2.515652616565066,
+          "n": 16680
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": 0.6337127472524227,
+        "se_dispersion": 0.5530795554549598,
+        "t_dispersion": 1.1457894999050082,
+        "p_dispersion": 0.2518822608119622,
+        "coef_favprob": -0.8337883051551981,
+        "r_squared": 0.11582192519769618,
+        "n": 9877
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 5.378656064127426,
+          "df": 2,
+          "p_value": 0.0679265685154481,
+          "llf_baseline": -4866.285866058737,
+          "llf_full": -4863.596538026673
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 0.9747071425590548,
+          "df": 2,
+          "p_value": 0.6142498134531147,
+          "llf_baseline": -4866.285866058737,
+          "llf_full": -4865.798512487458
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 1.7580684282274888,
+          "df": 2,
+          "p_value": 0.415183696668633,
+          "llf_baseline": -4866.285866058737,
+          "llf_full": -4865.406831844623
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 2.850298926983669,
+          "df": 2,
+          "p_value": 0.24047251865988098,
+          "llf_baseline": -4866.285866058737,
+          "llf_full": -4864.860716595245
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 0.3360433430862031,
+          "df": 2,
+          "p_value": 0.8453355147611055,
+          "llf_baseline": -4866.285866058737,
+          "llf_full": -4866.117844387194
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 11.19890334363663,
+          "df": 10,
+          "p_value": 0.34223311074279333,
+          "llf_baseline": -4866.285866058737,
+          "llf_full": -4860.686414386919
+        }
+      ],
+      "model_rows": 5093,
+      "oos_comparison": [
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 0.9737819036467221,
+          "n_matches": 3216,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 0.9751105285764203,
+          "n_matches": 3216,
+          "diff_vs_market": 0.001328624929698108,
+          "ci_lo": -0.001094275944220385,
+          "ci_hi": 0.0036699317557197133
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 0.9754944228956288,
+          "n_matches": 3216,
+          "diff_vs_market": 0.0017125192489066598,
+          "ci_lo": -0.00012898247333534068,
+          "ci_hi": 0.003603068798003221
+        },
+        {
+          "model": "+ form",
+          "log_loss": 0.9756457026912281,
+          "n_matches": 3216,
+          "diff_vs_market": 0.001863799044505956,
+          "ci_lo": -0.0002075443635018584,
+          "ci_hi": 0.003934199694579742
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 0.9758058951694033,
+          "n_matches": 3216,
+          "diff_vs_market": 0.0020239915226811225,
+          "ci_lo": 7.093297095418242e-05,
+          "ci_hi": 0.004003811868743668
+        },
+        {
+          "model": "+ Elo",
+          "log_loss": 0.9758371236123174,
+          "n_matches": 3216,
+          "diff_vs_market": 0.0020552199655951833,
+          "ci_lo": -7.563651703928879e-05,
+          "ci_hi": 0.00419106600737945
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 0.9760854652221965,
+          "n_matches": 3216,
+          "diff_vs_market": 0.002303561575474111,
+          "ci_lo": 0.00017822205182563785,
+          "ci_hi": 0.004522716284214324
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 0.9764114213605503,
+          "n_matches": 3216,
+          "diff_vs_market": 0.002629517713827893,
+          "ci_lo": -0.00042280668538533645,
+          "ci_hi": 0.0056940766100026
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 1.0229565079056049,
+          "n_matches": 3216,
+          "diff_vs_market": 0.04917460425888254,
+          "ci_lo": 0.0390249886109428,
+          "ci_hi": 0.0596618225841353
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 0.962744498021314,
+            "n_matches": 7980
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 0.9835950900702402,
+            "n_matches": 7980
+          }
+        ],
+        "diff_vs_market": 0.020850592048926208,
+        "ci_lo": 0.01640127347244685,
+        "ci_hi": 0.025302721518585276
+      }
+    },
+    "D1": {
+      "efficiency": {
+        "intercept": -0.009312977108411918,
+        "intercept_se": 0.01801636899029866,
+        "slope": 0.9855330409469527,
+        "slope_se": 0.027971912502665116,
+        "z_intercept_vs_0": -0.5169175383467507,
+        "z_slope_vs_1": -0.5171959211465753,
+        "n": 23868
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": -0.028364692796392362,
+          "intercept_se": 0.02560346600450743,
+          "slope": 0.9560377439893675,
+          "slope_se": 0.039617795433473754,
+          "z_intercept_vs_0": -1.1078458202260124,
+          "z_slope_vs_1": -1.1096593217675121,
+          "n": 11634
+        },
+        {
+          "period": "late",
+          "intercept": 0.008518488895254417,
+          "intercept_se": 0.025310644245842735,
+          "slope": 1.013261540147534,
+          "slope_se": 0.039422890333478386,
+          "z_intercept_vs_0": 0.33655756892294736,
+          "z_slope_vs_1": 0.33639187881341476,
+          "n": 12234
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": -0.6536206684875261,
+        "se_dispersion": 0.6361149710835491,
+        "t_dispersion": -1.027519706656421,
+        "p_dispersion": 0.3041758108632002,
+        "coef_favprob": -0.7158936204872897,
+        "r_squared": 0.07820811654888515,
+        "n": 7955
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 3.533508863231873,
+          "df": 2,
+          "p_value": 0.1708867142795526,
+          "llf_baseline": -3983.211549171102,
+          "llf_full": -3981.444794739486
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 3.783742847565918,
+          "df": 2,
+          "p_value": 0.1507893538393145,
+          "llf_baseline": -3983.211549171102,
+          "llf_full": -3981.319677747319
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 3.131425368697819,
+          "df": 2,
+          "p_value": 0.20893905250602282,
+          "llf_baseline": -3983.211549171102,
+          "llf_full": -3981.645836486753
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 0.8740889574637549,
+          "df": 2,
+          "p_value": 0.6459427000594979,
+          "llf_baseline": -3983.211549171102,
+          "llf_full": -3982.77450469237
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 5.240284454233006,
+          "df": 2,
+          "p_value": 0.07279250902249586,
+          "llf_baseline": -3983.211549171102,
+          "llf_full": -3980.5914069439855
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 16.647498452628497,
+          "df": 10,
+          "p_value": 0.08253700906240657,
+          "llf_baseline": -3983.211549171102,
+          "llf_full": -3974.8877999447877
+        }
+      ],
+      "model_rows": 4078,
+      "oos_comparison": [
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 0.9779201314851365,
+          "n_matches": 2582,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 0.9787767520285655,
+          "n_matches": 2582,
+          "diff_vs_market": 0.000856620543429029,
+          "ci_lo": -0.0011238552041162799,
+          "ci_hi": 0.0026923666752777554
+        },
+        {
+          "model": "+ Elo",
+          "log_loss": 0.9788482390532802,
+          "n_matches": 2582,
+          "diff_vs_market": 0.0009281075681437921,
+          "ci_lo": -0.0013475753879218142,
+          "ci_hi": 0.0031678028458517094
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 0.9790437217608171,
+          "n_matches": 2582,
+          "diff_vs_market": 0.001123590275680778,
+          "ci_lo": -0.0007320678697693864,
+          "ci_hi": 0.0029387120601028515
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 0.9792202818285838,
+          "n_matches": 2582,
+          "diff_vs_market": 0.0013001503434474132,
+          "ci_lo": -0.0014747184633804456,
+          "ci_hi": 0.00410236541430809
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 0.9792603730565226,
+          "n_matches": 2582,
+          "diff_vs_market": 0.0013402415713860364,
+          "ci_lo": -0.0011931449955007703,
+          "ci_hi": 0.003736816847445914
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 0.9793504046476909,
+          "n_matches": 2582,
+          "diff_vs_market": 0.0014302731625543499,
+          "ci_lo": -0.001961390997919283,
+          "ci_hi": 0.004878193903746059
+        },
+        {
+          "model": "+ form",
+          "log_loss": 0.9794261682043949,
+          "n_matches": 2582,
+          "diff_vs_market": 0.0015060367192585749,
+          "ci_lo": -0.00047606031735416144,
+          "ci_hi": 0.003493359402967278
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 1.027820818400821,
+          "n_matches": 2582,
+          "diff_vs_market": 0.049900686915684646,
+          "ci_lo": 0.03800986823296625,
+          "ci_hi": 0.062296754421468065
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 0.990327898955455,
+            "n_matches": 6426
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 1.0122658018102193,
+            "n_matches": 6426
+          }
+        ],
+        "diff_vs_market": 0.02193790285476439,
+        "ci_lo": 0.01709843795501148,
+        "ci_hi": 0.027211846440913588
+      }
+    },
+    "I1": {
+      "efficiency": {
+        "intercept": 0.06543423874806137,
+        "intercept_se": 0.01534091349967884,
+        "slope": 1.103339748413366,
+        "slope_se": 0.024324068703162696,
+        "z_intercept_vs_0": 4.265341744442482,
+        "z_slope_vs_1": 4.248456525693395,
+        "n": 28722
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": 0.10641008752341596,
+          "intercept_se": 0.02418770204060401,
+          "slope": 1.167747341639037,
+          "slope_se": 0.038344450605280106,
+          "z_intercept_vs_0": 4.399346715317761,
+          "z_slope_vs_1": 4.374748861728059,
+          "n": 12783
+        },
+        {
+          "period": "late",
+          "intercept": 0.03606236672185243,
+          "intercept_se": 0.019775961322779256,
+          "slope": 1.0570374843014005,
+          "slope_se": 0.03135537407829314,
+          "z_intercept_vs_0": 1.823545572993886,
+          "z_slope_vs_1": 1.8190656618855887,
+          "n": 15939
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": -1.3486235946987828,
+        "se_dispersion": 0.5883815057976302,
+        "t_dispersion": -2.2920903893308857,
+        "p_dispersion": 0.0219004278639938,
+        "coef_favprob": -0.7830159893829308,
+        "r_squared": 0.09725677993828186,
+        "n": 9562
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 3.0816015947657434,
+          "df": 2,
+          "p_value": 0.21420949432244876,
+          "llf_baseline": -4834.863469141587,
+          "llf_full": -4833.322668344204
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 0.8369667898532498,
+          "df": 2,
+          "p_value": 0.658044056371299,
+          "llf_baseline": -4834.863469141587,
+          "llf_full": -4834.444985746661
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 12.594774877305099,
+          "df": 2,
+          "p_value": 0.00184110850820039,
+          "llf_baseline": -4834.863469141587,
+          "llf_full": -4828.566081702935
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 3.185632267372057,
+          "df": 2,
+          "p_value": 0.20335213781817102,
+          "llf_baseline": -4834.863469141587,
+          "llf_full": -4833.270653007901
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 2.260745276178568,
+          "df": 2,
+          "p_value": 0.3229129043520799,
+          "llf_baseline": -4834.863469141587,
+          "llf_full": -4833.733096503498
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 19.37773537411522,
+          "df": 10,
+          "p_value": 0.03571902543097611,
+          "llf_baseline": -4834.863469141587,
+          "llf_full": -4825.17460145453
+        }
+      ],
+      "model_rows": 5069,
+      "oos_comparison": [
+        {
+          "model": "+ Elo",
+          "log_loss": 0.9515806947778578,
+          "n_matches": 3201,
+          "diff_vs_market": -0.003212418342688075,
+          "ci_lo": -0.005904543552839907,
+          "ci_hi": -0.00023812663612496392
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 0.9531061522781967,
+          "n_matches": 3201,
+          "diff_vs_market": -0.001686960842349037,
+          "ci_lo": -0.0039609003769385314,
+          "ci_hi": 0.0008438672761194833
+        },
+        {
+          "model": "+ form",
+          "log_loss": 0.9532836958820842,
+          "n_matches": 3201,
+          "diff_vs_market": -0.0015094172384615642,
+          "ci_lo": -0.004045951129143149,
+          "ci_hi": 0.0012491115318691282
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 0.9534913401391965,
+          "n_matches": 3201,
+          "diff_vs_market": -0.001301772981349381,
+          "ci_lo": -0.0038474541902981433,
+          "ci_hi": 0.0014947098535892415
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 0.95353929852489,
+          "n_matches": 3201,
+          "diff_vs_market": -0.0012538145956556973,
+          "ci_lo": -0.0037081599691278153,
+          "ci_hi": 0.0014260113180535295
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 0.953710949879215,
+          "n_matches": 3201,
+          "diff_vs_market": -0.0010821632413308272,
+          "ci_lo": -0.004180029460862374,
+          "ci_hi": 0.0023109843631867193
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 0.9537683519164258,
+          "n_matches": 3201,
+          "diff_vs_market": -0.001024761204119818,
+          "ci_lo": -0.003399514976023352,
+          "ci_hi": 0.0014859949251237777
+        },
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 0.9547931131205458,
+          "n_matches": 3201,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 0.9874884984845343,
+          "n_matches": 3201,
+          "diff_vs_market": 0.03269538536398866,
+          "ci_lo": 0.021997944298888916,
+          "ci_hi": 0.04284312423710132
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 0.9601867510462585,
+            "n_matches": 7978
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 0.9908264584790165,
+            "n_matches": 7978
+          }
+        ],
+        "diff_vs_market": 0.030639707432758102,
+        "ci_lo": 0.025650516961873024,
+        "ci_hi": 0.03553263164353906
+      }
+    },
+    "F1": {
+      "efficiency": {
+        "intercept": 0.02368960951289075,
+        "intercept_se": 0.018016891309992844,
+        "slope": 1.0365787403273647,
+        "slope_se": 0.027856576040148226,
+        "z_intercept_vs_0": 1.3148555489010252,
+        "z_slope_vs_1": 1.3131097043170603,
+        "n": 28221
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": 0.037503125505210275,
+          "intercept_se": 0.026208814399984036,
+          "slope": 1.0577851090492871,
+          "slope_se": 0.04046342789947552,
+          "z_intercept_vs_0": 1.4309355979579572,
+          "z_slope_vs_1": 1.4280823956102873,
+          "n": 14037
+        },
+        {
+          "period": "late",
+          "intercept": 0.011482995119695812,
+          "intercept_se": 0.024791604655031746,
+          "slope": 1.0177694436331253,
+          "slope_se": 0.03839008199908883,
+          "z_intercept_vs_0": 0.4631807936387532,
+          "z_slope_vs_1": 0.46286547743104633,
+          "n": 14184
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": -0.088685777745098,
+        "se_dispersion": 0.5224823948520169,
+        "t_dispersion": -0.1697392651291467,
+        "p_dispersion": 0.865215193010114,
+        "coef_favprob": -0.6824814160741327,
+        "r_squared": 0.07294345516033185,
+        "n": 9406
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 2.283806840552643,
+          "df": 2,
+          "p_value": 0.31921085079157274,
+          "llf_baseline": -4731.960867026787,
+          "llf_full": -4730.818963606511
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 4.89117197622727,
+          "df": 2,
+          "p_value": 0.08667532930472902,
+          "llf_baseline": -4731.960867026787,
+          "llf_full": -4729.5152810386735
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 6.793394956226621,
+          "df": 2,
+          "p_value": 0.03348366811061475,
+          "llf_baseline": -4731.960867026787,
+          "llf_full": -4728.564169548674
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 5.6214907808880525,
+          "df": 2,
+          "p_value": 0.06016013288736179,
+          "llf_baseline": -4731.960867026787,
+          "llf_full": -4729.150121636343
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 0.07849873899067461,
+          "df": 2,
+          "p_value": 0.9615109077582048,
+          "llf_baseline": -4731.960867026787,
+          "llf_full": -4731.921617657292
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 18.710706276411656,
+          "df": 10,
+          "p_value": 0.044094783814698564,
+          "llf_baseline": -4731.960867026787,
+          "llf_full": -4722.605513888581
+        }
+      ],
+      "model_rows": 4799,
+      "oos_comparison": [
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 0.9838231556245554,
+          "n_matches": 2917,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "+ form",
+          "log_loss": 0.9844637875094908,
+          "n_matches": 2917,
+          "diff_vs_market": 0.0006406318849353798,
+          "ci_lo": -0.0016058238767562138,
+          "ci_hi": 0.002946041405726017
+        },
+        {
+          "model": "+ Elo",
+          "log_loss": 0.9846776743479128,
+          "n_matches": 2917,
+          "diff_vs_market": 0.0008545187233573218,
+          "ci_lo": -0.0015571979884309425,
+          "ci_hi": 0.0033950003621767465
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 0.9848245999185405,
+          "n_matches": 2917,
+          "diff_vs_market": 0.001001444293985171,
+          "ci_lo": -0.00142668023694138,
+          "ci_hi": 0.0034436732912714266
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 0.98483921092143,
+          "n_matches": 2917,
+          "diff_vs_market": 0.0010160552968746716,
+          "ci_lo": -0.001008754133577046,
+          "ci_hi": 0.00306964627986059
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 0.9853379212969549,
+          "n_matches": 2917,
+          "diff_vs_market": 0.0015147656723995468,
+          "ci_lo": -0.0006516155681403623,
+          "ci_hi": 0.0037298053600783956
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 0.9863102403063853,
+          "n_matches": 2917,
+          "diff_vs_market": 0.002487084681829875,
+          "ci_lo": -0.0011415070253329954,
+          "ci_hi": 0.0060747854254751986
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 0.9863179877894801,
+          "n_matches": 2917,
+          "diff_vs_market": 0.0024948321649246722,
+          "ci_lo": -0.00038252463697025884,
+          "ci_hi": 0.005383818245757245
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 1.0288589154106556,
+          "n_matches": 2917,
+          "diff_vs_market": 0.04503575978610032,
+          "ci_lo": 0.03452286107599682,
+          "ci_hi": 0.055384033866723976
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 1.0000337539900561,
+            "n_matches": 7657
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 1.02548828064951,
+            "n_matches": 7657
+          }
+        ],
+        "diff_vs_market": 0.02545452665945379,
+        "ci_lo": 0.020697119903273175,
+        "ci_hi": 0.030223953294063036
+      }
+    },
+    "ALL": {
+      "efficiency": {
+        "intercept": 0.024372865483139317,
+        "intercept_se": 0.006709983836937961,
+        "slope": 1.0377875385168553,
+        "slope_se": 0.010416467245091486,
+        "z_intercept_vs_0": 3.632328493694502,
+        "z_slope_vs_1": 3.6276731475022714,
+        "n": 183132
+      },
+      "efficiency_by_period": [
+        {
+          "period": "early",
+          "intercept": 0.01860575807231857,
+          "intercept_se": 0.009855308486449867,
+          "slope": 1.0287475427770123,
+          "slope_se": 0.01524163540287361,
+          "z_intercept_vs_0": 1.8878920023558634,
+          "z_slope_vs_1": 1.8861193052546272,
+          "n": 89421
+        },
+        {
+          "period": "late",
+          "intercept": 0.029413521518346357,
+          "intercept_se": 0.009161127104545627,
+          "slope": 1.0457534866019624,
+          "slope_se": 0.014273348446650212,
+          "z_intercept_vs_0": 3.210688071749574,
+          "z_slope_vs_1": 3.2055187871981254,
+          "n": 93711
+        }
+      ],
+      "dispersion_error": {
+        "coef_dispersion": -0.059744622571238304,
+        "se_dispersion": 0.21603302165745378,
+        "t_dispersion": -0.2765531959552487,
+        "p_dispersion": 0.7821232075750129,
+        "coef_favprob": -0.747282707762044,
+        "r_squared": 0.08828744842428982,
+        "n": 61029
+      },
+      "lr_tests": [
+        {
+          "model": "+ dispersion",
+          "lr_stat": 1.4447490409802413,
+          "df": 2,
+          "p_value": 0.4855978239082869,
+          "llf_baseline": -30988.26549926444,
+          "llf_full": -30987.54312474395
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "lr_stat": 5.431321350275539,
+          "df": 2,
+          "p_value": 0.06616122748639694,
+          "llf_baseline": -30988.26549926444,
+          "llf_full": -30985.5498385893
+        },
+        {
+          "model": "+ Elo",
+          "lr_stat": 13.49810589732806,
+          "df": 2,
+          "p_value": 0.0011719890291507196,
+          "llf_baseline": -30988.26549926444,
+          "llf_full": -30981.516446315774
+        },
+        {
+          "model": "+ form",
+          "lr_stat": 9.519881935164449,
+          "df": 2,
+          "p_value": 0.008566115061055639,
+          "llf_baseline": -30988.26549926444,
+          "llf_full": -30983.505558296856
+        },
+        {
+          "model": "+ rest days",
+          "lr_stat": 2.1243569876533,
+          "df": 2,
+          "p_value": 0.3457018800004998,
+          "llf_baseline": -30988.26549926444,
+          "llf_full": -30987.20332077061
+        },
+        {
+          "model": "+ all features",
+          "lr_stat": 27.25770798990561,
+          "df": 10,
+          "p_value": 0.002370629103220552,
+          "llf_baseline": -30988.26549926444,
+          "llf_full": -30974.636645269486
+        }
+      ],
+      "model_rows": 31540,
+      "oos_comparison": [
+        {
+          "model": "market consensus (no fit)",
+          "log_loss": 0.9840965742354815,
+          "n_matches": 19798,
+          "diff_vs_market": 0.0,
+          "ci_lo": 0.0,
+          "ci_hi": 0.0
+        },
+        {
+          "model": "+ Elo",
+          "log_loss": 0.9841448166369176,
+          "n_matches": 19798,
+          "diff_vs_market": 4.824240143624808e-05,
+          "ci_lo": -0.0004574271250359037,
+          "ci_hi": 0.0005801761682205475
+        },
+        {
+          "model": "+ form",
+          "log_loss": 0.9843392133597108,
+          "n_matches": 19798,
+          "diff_vs_market": 0.00024263912422915027,
+          "ci_lo": -0.00025742970466322593,
+          "ci_hi": 0.000758859440881472
+        },
+        {
+          "model": "baseline (consensus only)",
+          "log_loss": 0.9843803668843741,
+          "n_matches": 19798,
+          "diff_vs_market": 0.0002837926488926586,
+          "ci_lo": -0.00013808545053118316,
+          "ci_hi": 0.0007334642928155398
+        },
+        {
+          "model": "+ all features",
+          "log_loss": 0.9843833071354499,
+          "n_matches": 19798,
+          "diff_vs_market": 0.0002867328999684475,
+          "ci_lo": -0.0003650309421255644,
+          "ci_hi": 0.0009351593264012648
+        },
+        {
+          "model": "+ sharp-soft gap",
+          "log_loss": 0.9843997674524271,
+          "n_matches": 19798,
+          "diff_vs_market": 0.0003031932169455664,
+          "ci_lo": -0.00017138223578999864,
+          "ci_hi": 0.0007904149240704467
+        },
+        {
+          "model": "+ dispersion",
+          "log_loss": 0.9844355266070011,
+          "n_matches": 19798,
+          "diff_vs_market": 0.00033895237151958913,
+          "ci_lo": -0.00010504921912583784,
+          "ci_hi": 0.0008198472125220018
+        },
+        {
+          "model": "+ rest days",
+          "log_loss": 0.9844780421673426,
+          "n_matches": 19798,
+          "diff_vs_market": 0.000381467931861147,
+          "ci_lo": -9.226409545559781e-05,
+          "ci_hi": 0.0008637971282308864
+        },
+        {
+          "model": "XGBoost (all features)",
+          "log_loss": 0.9930918321348392,
+          "n_matches": 19798,
+          "diff_vs_market": 0.008995257899357682,
+          "ci_lo": 0.007063765809783401,
+          "ci_hi": 0.011026089736704738
+        }
+      ],
+      "dixon_coles": {
+        "summary": [
+          {
+            "model": "market consensus",
+            "log_loss": 0.9893837954056112,
+            "n_matches": 49613
+          },
+          {
+            "model": "Dixon-Coles (odds-free)",
+            "log_loss": 1.0152792405435098,
+            "n_matches": 49613
+          }
+        ],
+        "diff_vs_market": 0.02589544513789852,
+        "ci_lo": 0.023831513664831123,
+        "ci_hi": 0.027708403915978713
+      }
+    }
+  },
+  "computed_at": "2026-07-07T16:08:34.619077",
+  "runtime_seconds": 1451.7
+}

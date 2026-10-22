@@ -1,0 +1,84 @@
+# Data sources and historical bundle
+
+The offline snapshot contains 61,061 completed matches from 2000-07-28 through
+2026-05-24 (seasons 2000–01 through 2025–26). It is historical research data;
+it does not establish coverage of the current season or upcoming fixtures.
+
+| Division | Matches |
+| --- | ---: |
+| England Premier League (E0) | 9,880 |
+| England Championship (E1) | 14,352 |
+| Spain La Liga (SP1) | 9,880 |
+| Germany Bundesliga (D1) | 7,956 |
+| Italy Serie A (I1) | 9,584 |
+| France Ligue 1 (F1) | 9,409 |
+
+Results, match statistics and bookmaker prices originate from
+[Football-Data.co.uk](https://www.football-data.co.uk/), using its historical
+`mmz4281/{season}/{division}.csv` feeds. The local ingestion and research
+pipeline produced `matches.parquet`, `enriched.parquet`, and the study JSONs.
+The committed bundle preserves their existing bytes; it does not recompute the
+research or download newer seasons at startup.
+
+Cached external Elo inputs originate from [Club Elo](http://clubelo.com/)
+([API](http://api.clubelo.com/)). The bundle contains the ten CSV cache files
+available in this checkout. Coverage is partial; the header-only
+`Ajaccio_GFCO.csv` preserves an unavailable-history response, not a rating.
+The existing `processed/clubelo.json` records study coverage and network status.
+Missing Club Elo histories are not fetched by bootstrap.
+
+Original retrieval timestamps are unknown. `original_retrieved_at: null` in the
+manifest records that fact. `assembled_at` is the bundle assembly time, not a
+provider retrieval or freshness timestamp. Study `computed_at` fields describe
+local computation only.
+
+## Integrity and limits
+
+`data/bundled/manifest.json` records each file's SHA-256, byte size and schema,
+source attribution, match coverage and league counts, and validation checks.
+`python -m src.bundle verify` checks bytes, safe allowlisted paths, schemas,
+unique fixtures, score/result consistency, consensus probability bounds and
+normalization, metadata, and alignment of enriched and base matches. These
+checks establish integrity and internal consistency; they do not independently
+verify the factual accuracy of provider records or research conclusions.
+
+`python -m src.launch` verifies the bundle and atomically installs missing
+working files under ignored `data/processed/` and `data/raw/clubelo/` before
+launching Streamlit. Direct Streamlit pages also bootstrap on page setup.
+Existing working files and personal ledgers are never automatically replaced.
+Interrupted installation can be rerun. The bundle excludes credentials,
+ledgers, live odds responses and logs. A maintainer can create a new bundle
+explicitly with `python -m src.bundle build --bundle-dir NEW_DIRECTORY`;
+this refuses to overwrite an existing bundle directory.
+
+## Rights and attribution
+
+The repository's MIT license covers its original code, not third-party data.
+Football-Data.co.uk's published personal/research terms do **not** establish an
+explicit redistribution license. No such license is asserted for the included
+snapshot or Club Elo inputs. Attribution and local validation do not grant
+redistribution rights. Consult the providers' current terms and obtain any
+necessary permission before redistributing data or using it commercially.
+This bundle records provenance; it is not a representation that redistribution
+permission has been obtained.
+
+Live odds are separate optional per-user API data and are not included in the
+snapshot. Each end user supplies their own credentials.
+
+## Optional per-user live collection
+
+[The Odds API v4](https://the-odds-api.com/liveapi/guides/v4/) supplies current
+1X2 odds and completed scores. Each user supplies a private API key; these live
+responses are stored only in ignored local `data/live/collector.sqlite3` and are
+excluded from the committed historical snapshot. The collector joins by provider
+sport/league and event ID, records actual UTC observation times, and preserves
+final-score corrections. Local validation rejects unfinished/malformed finals;
+it does not independently verify provider correctness or promise uptime.
+
+Scores request `daysFrom=3`; missing results older than that window remain
+unresolved after long outages. Estimated all-six-league usage is 54 credits/day
+or 1,620 per 30 days at three runs daily (one odds credit plus two score credits
+per league/run), compared with the 500-credit free allowance. Empty responses
+may cost less. Provider plans, terms and actual quota headers govern usage;
+no plan is purchased automatically. See [collection setup](docs/COLLECTION.md).
+Authenticated live access has not been verified without an end-user key.

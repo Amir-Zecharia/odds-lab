@@ -1,0 +1,30 @@
+.venv/
+data/raw/
+data/processed/
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/secrets.toml
+.env
+.env.*
+*.log
+.DS_Store
+.a5c/
+
+# Only the example is safe to share; real environment files stay local.
+!.env.example
+.venv*/
+venv/
+.coverage
+.coverage.*
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+*.pem
+*.key
+
+# Private collection state, credentials and observations
+data/live/
