@@ -45,7 +45,7 @@ unknown. Bootstrap installs missing working files without overwriting existing
 data or your ledger. Verify the immutable snapshot with `python -m src.bundle verify`.
 See [setup](docs/SETUP.md) and [source attribution](DATA_SOURCES.md).
 
-Live odds are optional for all six leagues. Supply your own `ODDS_API_KEY`
+Live odds are optional for the six research leagues and opt-in Israel. Supply your own `ODDS_API_KEY`
 through the environment, Streamlit secrets, or the page's password input,
 then select **Enable optional live odds**. Startup makes no live request.
 Responses cache for one hour; the page shows cache age and a refresh button.
@@ -227,3 +227,41 @@ no explicit redistribution permission is established by their published
 personal/research terms. See [DATA_SOURCES.md](DATA_SOURCES.md). For education and research; not betting advice. The core result —
 odds are near-efficient — implies profitable betting on public information
 is unlikely. Gambling regulations vary by jurisdiction.
+
+## Optional Israel live coverage
+
+**Ligat Ha'Al (IL1)** is an explicit opt-in on Upcoming Matches and Live
+Collection. The six European defaults and historical research bundle are
+unchanged; no Israeli historical snapshot is included.
+
+Israel uses [direct API-Football v3](https://www.api-football.com/documentation-v3),
+not RapidAPI. Supply its separate password field on Live Collection or set
+`API_FOOTBALL_KEY`; the client sends `x-apisports-key` to the direct provider.
+The private CLI options are `python -m src.collector configure
+--set-api-football-key` and `--clear-api-football-key`. Blank fields preserve
+stored keys; clearing either provider key leaves the other intact. Environment
+values override private settings. `.env` files are not automatically loaded.
+Select `IL1` explicitly with `python -m src.collector configure --leagues IL1`
+(or include European codes for a combined collection).
+
+The client discovers Israel's current top-flight season and requires its odds
+coverage flag. Current authenticated coverage and plan access remain **unverified**
+until an end user supplies a key. Coverage or plan failures are explicit and
+retryable; no old-season fallback is used. The historical six-league validation
+results do not establish Israel coverage or forecast quality.
+
+Upcoming Matches makes requests only after the live checkbox is enabled with a
+key, caches for one hour and offers an explicit refresh. Its Israel recording
+action points to Live Collection: the historical Live Ledger cannot settle IL1.
+The collector stores provider event identities, pre-kickoff frozen predictions
+and regulation full-time finals. Only collected IL1 data trains the separate
+Israel candidate, subject to its own chronological 500-training/200-validation
+minimum and confidence-interval/Brier promotion gate. European promotion cannot
+activate Israel learned forecasts. Until Israel passes, active forecasts use the
+market baseline.
+
+The Odds API estimate remains nine credits per European league/day at three
+runs. API-Football has separate daily/per-minute quotas; discovery, fixtures and
+paginated odds determine requests, so there is no fixed per-league cost promise.
+Missing keys and quota/authentication failures are isolated by provider, allowing
+healthy selected leagues to continue. Status and page startup make no HTTP calls.

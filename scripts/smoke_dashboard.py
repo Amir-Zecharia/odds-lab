@@ -17,6 +17,7 @@ def child(root, page, controls):
     os.chdir(root)
     sys.path[:0] = [str(root), str(root / "app")]
     os.environ.pop("ODDS_API_KEY", None)
+    os.environ.pop("API_FOOTBALL_KEY", None)
     import requests
 
     calls = []
@@ -55,11 +56,17 @@ def child(root, page, controls):
         slider.set_value((slider.options[-2], slider.options[-1])).run()
         check()
     if controls and page.endswith("15_Upcoming_Matches.py"):
-        from src.live import SPORT_KEYS
-        for league in SPORT_KEYS:
+        from src.live_leagues import LIVE_LEAGUES
+        for league in LIVE_LEAGUES:
             at.sidebar.radio[0].set_value(league).run()
             check()
         assert at.text_input and at.text_input[0].value == "", "Expected empty per-user key input"
+        next(w for w in at.checkbox if "live odds" in w.label.lower()).check().run()
+        check()
+    if controls and page.endswith("29_Live_Collection.py"):
+        at.multiselect[0].select("IL1").run()
+        check()
+        assert any("football" in item.label.lower() for item in at.text_input)
     if controls and page.endswith(("26_Season_Simulator.py", "28_Match_Forecast.py")):
         from src import config
         # Exercise a second league and an earlier season where these controls exist.
@@ -94,7 +101,7 @@ def main():
         for name in ("src", "app"):
             shutil.copytree(source / name, root / name, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         shutil.copytree(source / "data/bundled", root / "data/bundled")
-        env = dict(os.environ, ODDS_API_KEY="", PYTHONPATH=str(root))
+        env = dict(os.environ, ODDS_API_KEY="", API_FOOTBALL_KEY="", PYTHONPATH=str(root))
         bootstrap_code = (
             "import requests; "
             "requests.sessions.Session.request = lambda *a, **k: "
